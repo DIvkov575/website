@@ -3,6 +3,8 @@ $std_w1: 200px;
 $blue1: rgb(50,150,200);
 $blue2: rgb(150,255,255);
 $white1: #eee;
+$red1: #ce5078;
+$black1: #252525;
 
 .b1 {
   border: 3px solid grey;
@@ -13,7 +15,7 @@ $white1: #eee;
   font-size: 20px;
   margin: auto;
   &:hover {
-    color: black;
+    color: black !important;
     background:white;
   }
 }

@@ -10,6 +10,10 @@ import Login from './pages/login/Login';
 import Profile from './pages/profile/Profile';
 import NewListing from './pages/newListing/NewListing';
 import ShowListing from './pages/showListing/showListing';
+import ContactPage from "./pages/contactPage/ContactPage";
+import SettingsPage from "./pages/settingsPage/SettingsPage";
+// import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import AllListings from "./pages/allListings/AllListings";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,9 +22,15 @@ root.render(
         <Routes>
             <Route path={"/"} element={<Home />}/>
             <Route path={"/signup"} element={<Signup/>}/>
-            <Route path={"/login"} element={<Login />}/>
+            <Route path={"/Login"} element={<Login />}/>
+            <Route path={"/Contact"} element={<ContactPage/>}/>
+            {/*<Route path={"/auth/resetPass"} element={<ResetPassword />}/>*/}
+
+            {/*profile*/}
             <Route path={"/profile"} element={<Profile/>}/>
             <Route path={"/newListing"} element={<NewListing/>}/>
+            <Route path={"/allListings"} element={<AllListings/>}/>
+            <Route path={"/settings"} element={<SettingsPage/>}/>
             <Route path={"/listing/:id"} element={<ShowListing />}/>
         </Routes>
     </BrowserRouter>
