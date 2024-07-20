@@ -1,26 +1,37 @@
 import './showListing.scss'
+import {useParams} from "react-router";
+import React from "react";
+// @ts-ignore
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-function showListing() {
+interface dataProp {
+    dataKey: string,
+    dataVal: string,
+}
+const ShowData: React.FC<dataProp> = (props) => {
     return (
         <div>
+           <h3></h3>
+        </div>
+    )
 
-                    {/*
-                    TODO:
-                    - images (big + carousel underneath)
-                    - link to other various platform profiles + status
-                    - reservation calendar
-                    - edit listing section
-                        - description
-                        - tags
-                        - features   
+}
 
-                    
-                    
-                    
-                    
-                    */}
+function ShowListing() {
+    const {id} = useParams();
+    let listingData = JSON.parse(sessionStorage.getItem("properties") as string)[parseInt(id as string)];
+    return (
+        <div>
+        <h1>{listingData.name}</h1>
+        <h1>{listingData.location}</h1>
+
+        <Calendar />
         </div>
 
 
     )
 }
+
+
+export default ShowListing;
